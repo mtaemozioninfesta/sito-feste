@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MTA Mascotte Taranto</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+}
+
+/* LOGO */
+.logo {
+  text-align:center;
+  padding:10px;
+  background:white;
+}
+
+.logo img {
+  max-width:150px;
+}
+
+/* HERO */
+.hero {
+  background:url('sfondo.jpg') center/cover no-repeat;
+  height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  text-align:center;
+  position:relative;
+}
+
+/* overlay scuro */
+.hero::after {
+  content:'';
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+}
+
+.hero-content {
+  position:relative;
+}
+
+/* BOTTONE */
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:15px 25px;
+  background:#ffb347;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+/* SEZIONI */
+.section {
+  padding:50px;
+  text-align:center;
+}
+
+.services {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.service {
+  background:#fff;
+  margin:10px;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* GALLERIA */
+.gallery img {
+  width:30%;
+  margin:1%;
+  border-radius:10px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .gallery img {width:90%;}
+  .hero h1 {font-size:26px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGO -->
+<div class="logo">
+  <img src="logo.jpg" alt="Logo">
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>🎉 Emozioni in Festa</h1>
+    <p>Sala feste e mascotte a Taranto</p>
+    <a href="https://wa.me/393755022384" class="btn">Prenota su WhatsApp</a>
+  </div>
+</div>
+
+<!-- SERVIZI -->
+<div class="section">
+  <h2>I nostri servizi</h2>
+  <div class="services">
+    <div class="service">🎂 Compleanni</div>
+    <div class="service">🎭 Mascotte</div>
+    <div class="service">🎈 Allestimenti</div>
+    <div class="service">🎤 Animazione</div>
+  </div>
+</div>
+
+<!-- GALLERIA -->
+<div class="section gallery">
+  <h2>La nostra sala</h2>
+  <img src="sfondo.jpg">
+  <img src="sfondo.jpg">
+  <img src="sfondo.jpg">
+</div>
+
+<!-- CONTATTI -->
+<div class="section">
+  <h2>Contatti</h2>
+  <p>📍 Via Cosenza 14, Taranto</p>
+  <p>📞 375 5022384</p>
+</div>
+
+</body>
+</html>

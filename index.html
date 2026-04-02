@@ -28,7 +28,7 @@ body {
 .menu a {text-decoration:none;color:black;font-weight:bold;}
 .menu a:hover {color:#00a86b;}
 
-/* HEADER WOW */
+/* HEADER */
 .header {
   position:relative;
   display:flex;
@@ -49,9 +49,8 @@ body {
   font-size:55px;
   font-weight:bold;
   text-align:center;
-  margin:0;
   position:relative;
-  animation: floatText 3s ease-in-out infinite;
+  animation: floatText 3s infinite;
 }
 
 .logo-text span {
@@ -62,13 +61,14 @@ body {
   animation:gradientMove 6s linear infinite;
 }
 
+/* luce */
 .logo-text::after {
   content:'';
   position:absolute;
-  top:0;
-  left:-100%;
   width:100%;
   height:100%;
+  top:0;
+  left:-100%;
   background:linear-gradient(120deg, transparent, rgba(255,255,255,0.8), transparent);
   animation:shine 3s infinite;
 }
@@ -76,11 +76,9 @@ body {
 @keyframes gradientMove {
   100% {background-position:300%;}
 }
-
 @keyframes shine {
   100% {left:100%;}
 }
-
 @keyframes floatText {
   50% {transform:translateY(-5px);}
 }
@@ -121,7 +119,11 @@ body {
 @keyframes pulse {50%{transform:scale(1.08);}}
 
 /* SEZIONI */
-.section {padding:60px 20px;text-align:center;background:#f4fff8;}
+.section {
+  padding:60px 20px;
+  text-align:center;
+  background:#f4fff8;
+}
 
 /* SERVIZI */
 .services {
@@ -167,15 +169,22 @@ body {
 }
 #popup img {max-width:90%;}
 
-/* RECENSIONI */
-.reviews {display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
-.review {background:white;padding:20px;border-radius:15px;width:250px;}
-
 /* PREZZI */
-.prices {display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
-.price-box {background:white;padding:20px;border-radius:15px;width:220px;}
+.prices {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+.price-box {
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  width:220px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 
-/* WHATSAPP */
+/* CONTATTI */
 .whatsapp {
   position:fixed;
   bottom:20px;
@@ -203,30 +212,51 @@ body {
   100% {transform:translateY(-120vh);}
 }
 
-/* CORIANDOLI */
-.confetti::before {
-  content:"• • • • • • •";
+/* CORIANDOLI REALI */
+.confetti {
   position:fixed;
   width:100%;
-  font-size:18px;
-  color:#00c853;
-  opacity:0.15;
-  animation: fall 15s linear infinite;
+  height:100%;
+  pointer-events:none;
+  top:0;
+  left:0;
 }
+
+.confetti span {
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:#00c853;
+  opacity:0.3;
+  animation:fall 10s linear infinite;
+}
+
+.confetti span:nth-child(odd){background:#ffb347;}
+
 @keyframes fall {
-  100% {transform:translateY(100vh);}
+  0% {transform:translateY(-10vh);}
+  100% {transform:translateY(110vh);}
 }
 </style>
 </head>
 
 <body>
 
+<!-- PALLONCINI -->
 <div class="balloons">
   <span>🎈</span>
   <span>🎈</span>
   <span>🎈</span>
 </div>
-<div class="confetti"></div>
+
+<!-- CORIANDOLI -->
+<div class="confetti">
+  <span style="left:10%"></span>
+  <span style="left:30%"></span>
+  <span style="left:50%"></span>
+  <span style="left:70%"></span>
+  <span style="left:90%"></span>
+</div>
 
 <nav class="menu">
   <a href="#">Home</a>
@@ -270,6 +300,16 @@ body {
     <img src="sala1.jpg" onclick="openImg(this.src)">
     <img src="sala2.jpg" onclick="openImg(this.src)">
     <img src="sala3.jpg" onclick="openImg(this.src)">
+  </div>
+</div>
+
+<!-- PREZZI -->
+<div class="section" id="prezzi">
+  <h2>Prezzi</h2>
+  <div class="prices">
+    <div class="price-box">🎉 Base €100</div>
+    <div class="price-box">🎈 Standard €150</div>
+    <div class="price-box">✨ Premium €200</div>
   </div>
 </div>
 

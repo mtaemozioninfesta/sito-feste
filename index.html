@@ -10,27 +10,32 @@ body {margin:0;font-family:Arial;}
 
 /* HEADER FULL */
 .header {
+  position:relative;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  padding:20px 40px;
+  justify-content:center;
+  padding:25px 20px;
   background:white;
 }
-
 .logo-img {
-  width:80px;
+  position:absolute;
+  left:20px;
+  width:70px;
 }
 
 .logo-text {
-  font-size:60px;
+  font-size:50px;
   font-weight:bold;
   margin:0;
+  text-align:center;
+  line-height:1.2;
+
   background: linear-gradient(45deg,#ff7eb3,#ffb347,#00c9ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
   animation: floatText 3s ease-in-out infinite;
 }
-
 @keyframes floatText {
   0% {transform:translateY(0);}
   50% {transform:translateY(-5px);}
@@ -231,9 +236,18 @@ body {margin:0;font-family:Arial;}
 
 /* MOBILE */
 @media(max-width:768px){
-  .logo-text {font-size:30px;}
-  .header {flex-direction:column;gap:10px;}
-  .hero h1 {font-size:26px;}
+  .logo-text {
+    font-size:22px;
+  }
+
+  .logo-img {
+    position:static;
+    margin-bottom:10px;
+  }
+
+  .header {
+    flex-direction:column;
+  }
 }
 </style>
 </head>
@@ -243,7 +257,7 @@ body {margin:0;font-family:Arial;}
 <!-- HEADER -->
 <div class="header">
   <img src="logo.jpg" class="logo-img">
-  <h1 class="logo-text">MTA Emozioni in Festa</h1>
+  <h1 class="logo-text">MTA Emozioni in Festa 🎉 Compleanni • Mascotte • Eventi</h1>
 </div>
 
 <!-- HERO -->

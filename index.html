@@ -5,13 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MTA Emozioni in Festa</title>
-<meta name="description" content="Sala feste a Taranto con animazione, mascotte e gonfiabili per compleanni bambini.">
 
 <style>
 body {
   margin:0;
   font-family:Arial;
-  background:linear-gradient(135deg,#fff8f0,#fef6ff,#eef9ff);
+  background:linear-gradient(135deg,#f1fff5,#eafff0,#f6fff9);
 }
 
 /* MENU */
@@ -27,9 +26,9 @@ body {
   box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 .menu a {text-decoration:none;color:black;font-weight:bold;}
-.menu a:hover {color:#ff7b00;}
+.menu a:hover {color:#00a86b;}
 
-/* HEADER */
+/* HEADER WOW */
 .header {
   position:relative;
   display:flex;
@@ -37,23 +36,51 @@ body {
   align-items:center;
   padding:30px 20px;
   background:white;
+  overflow:hidden;
 }
+
 .logo-img {
   position:absolute;
   left:20px;
   width:70px;
 }
+
 .logo-text {
-  font-size:50px;
+  font-size:55px;
   font-weight:bold;
   text-align:center;
-  animation: floatText 3s infinite;
+  margin:0;
+  position:relative;
+  animation: floatText 3s ease-in-out infinite;
 }
+
 .logo-text span {
-  background: linear-gradient(45deg,#ff7eb3,#ffb347,#00c9ff);
+  background: linear-gradient(45deg,#00c853,#69f0ae,#00c9ff,#00c853);
+  background-size:300%;
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+  animation:gradientMove 6s linear infinite;
 }
+
+.logo-text::after {
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.8), transparent);
+  animation:shine 3s infinite;
+}
+
+@keyframes gradientMove {
+  100% {background-position:300%;}
+}
+
+@keyframes shine {
+  100% {left:100%;}
+}
+
 @keyframes floatText {
   50% {transform:translateY(-5px);}
 }
@@ -83,18 +110,18 @@ body {
   display:inline-block;
   margin-top:20px;
   padding:15px 30px;
-  background:#ffb347;
+  background:#00c853;
   color:white;
   text-decoration:none;
   border-radius:30px;
 }
-.btn:hover {background:#ff7b00;}
+.btn:hover {background:#00a86b;}
 
 .whatsapp-btn {animation:pulse 1.5s infinite;}
 @keyframes pulse {50%{transform:scale(1.08);}}
 
 /* SEZIONI */
-.section {padding:60px 20px;text-align:center;background:#f9f9f9;}
+.section {padding:60px 20px;text-align:center;background:#f4fff8;}
 
 /* SERVIZI */
 .services {
@@ -115,8 +142,6 @@ body {
   height:160px;
   object-fit:cover;
 }
-.service h3 {margin:10px 0;}
-.service p {padding:0 15px 15px;font-size:14px;}
 
 /* GALLERIA */
 .gallery-pro {
@@ -173,6 +198,7 @@ body {
 .balloons span:nth-child(1){left:15%;animation-duration:14s;}
 .balloons span:nth-child(2){left:50%;animation-duration:18s;}
 .balloons span:nth-child(3){left:80%;animation-duration:16s;}
+
 @keyframes floatUp {
   100% {transform:translateY(-120vh);}
 }
@@ -183,7 +209,7 @@ body {
   position:fixed;
   width:100%;
   font-size:18px;
-  color:#ffb347;
+  color:#00c853;
   opacity:0.15;
   animation: fall 15s linear infinite;
 }
@@ -195,17 +221,13 @@ body {
 
 <body>
 
-<!-- PALLONCINI -->
 <div class="balloons">
   <span>🎈</span>
   <span>🎈</span>
   <span>🎈</span>
 </div>
-
-<!-- CORIANDOLI -->
 <div class="confetti"></div>
 
-<!-- MENU -->
 <nav class="menu">
   <a href="#">Home</a>
   <a href="#servizi">Servizi</a>
@@ -214,17 +236,17 @@ body {
   <a href="#contatti">Contatti</a>
 </nav>
 
-<!-- HEADER -->
 <div class="header">
   <img src="logo.jpg" class="logo-img">
-  <h1 class="logo-text"><span>MTA Emozioni in Festa 🎉</span></h1>
+  <h1 class="logo-text">
+    <span>MTA Emozioni in Festa 🎉 Feste Indimenticabili per Bambini</span>
+  </h1>
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-content">
     <h1>🎉 La festa che tuo figlio non dimenticherà mai</h1>
-    <a href="https://api.whatsapp.com/send?phone=393755022384" target="_blank" class="btn whatsapp-btn">Prenota ora</a>
+    <a href="https://api.whatsapp.com/send?phone=393755022384" class="btn whatsapp-btn">Prenota ora</a>
   </div>
 </div>
 
@@ -232,43 +254,12 @@ body {
 <div class="section" id="servizi">
   <h2>I nostri servizi</h2>
   <div class="services">
-
-    <div class="service">
-      <img src="compleanni.jpg">
-      <h3>🎂 Compleanni</h3>
-      <p>Feste complete con giochi e musica.</p>
-    </div>
-
-    <div class="service">
-      <img src="mascotte.jpg">
-      <h3>🎭 Mascotte</h3>
-      <p>Personaggi per rendere unica la festa.</p>
-    </div>
-
-    <div class="service">
-      <img src="noleggio-mascotte.jpg">
-      <h3>🧸 Noleggio Mascotte</h3>
-      <p>Noleggio mascotte per eventi.</p>
-    </div>
-
-    <div class="service">
-      <img src="allestimenti.jpg">
-      <h3>🎈 Allestimenti</h3>
-      <p>Decorazioni personalizzate.</p>
-    </div>
-
-    <div class="service">
-      <img src="gonfiabili.jpg">
-      <h3>🏰 Noleggio Gonfiabili</h3>
-      <p>Divertimento assicurato.</p>
-    </div>
-
-    <div class="service">
-      <img src="animazione.jpg">
-      <h3>🎤 Animazione</h3>
-      <p>Giochi e intrattenimento.</p>
-    </div>
-
+    <div class="service"><img src="compleanni.jpg"><h3>🎂 Compleanni</h3></div>
+    <div class="service"><img src="mascotte.jpg"><h3>🎭 Mascotte</h3></div>
+    <div class="service"><img src="noleggio-mascotte.jpg"><h3>🧸 Noleggio Mascotte</h3></div>
+    <div class="service"><img src="allestimenti.jpg"><h3>🎈 Allestimenti</h3></div>
+    <div class="service"><img src="gonfiabili.jpg"><h3>🏰 Gonfiabili</h3></div>
+    <div class="service"><img src="animazione.jpg"><h3>🎤 Animazione</h3></div>
   </div>
 </div>
 
@@ -291,7 +282,7 @@ body {
   <iframe src="https://www.google.com/maps?q=Via%20Cosenza%2014%20Taranto&output=embed"
   width="100%" height="300" style="border:0;border-radius:15px;margin-top:20px;"></iframe>
 
-  <a href="https://api.whatsapp.com/send?phone=393755022384" target="_blank" class="btn">
+  <a href="https://api.whatsapp.com/send?phone=393755022384" class="btn">
     📲 Contattaci su WhatsApp
   </a>
 </div>

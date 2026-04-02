@@ -7,15 +7,7 @@
 
 <style>
 body {margin:0;font-family:Arial;}
-.whatsapp-btn {
-  animation:pulse 1.5s infinite;
-}
 
-@keyframes pulse {
-  0% {transform:scale(1);}
-  50% {transform:scale(1.08);}
-  100% {transform:scale(1);}
-}
 /* LOGO */
 .logo {text-align:center;padding:10px;background:white;}
 .logo img {max-width:150px;}
@@ -38,10 +30,14 @@ body {margin:0;font-family:Arial;}
   width:100%;
   height:100%;
   background:rgba(0,0,0,0.5);
+  z-index:1;
 }
 
-.hero-content {position:relative;}
-z-index:2;
+.hero-content {
+  position:relative;
+  z-index:2;
+}
+
 /* BUTTON */
 .btn {
   display:inline-block;
@@ -58,6 +54,17 @@ z-index:2;
 .btn:hover {
   background:#ff7b00;
   transform:scale(1.05);
+}
+
+/* WHATSAPP HERO ANIMATO */
+.whatsapp-btn {
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {transform:scale(1);}
+  50% {transform:scale(1.08);}
+  100% {transform:scale(1);}
 }
 
 /* SEZIONI */
@@ -79,7 +86,7 @@ z-index:2;
   box-shadow:0 5px 10px rgba(0,0,0,0.1);
 }
 
-/* GALLERIA PRO */
+/* GALLERIA */
 .gallery-pro {
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -148,7 +155,7 @@ z-index:2;
   box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* WHATSAPP */
+/* WHATSAPP FISSO */
 .whatsapp {
   position:fixed;
   bottom:20px;
@@ -192,7 +199,9 @@ z-index:2;
   <div class="hero-content">
     <h1>🎉 La festa che tuo figlio non dimenticherà mai</h1>
     <p>Compleanni, mascotte e divertimento garantito a Taranto</p>
-    <a href="https://wa.me/393755022384" class="btn">Prenota ora su WhatsApp</a>
+    <a href="https://api.whatsapp.com/send?phone=393755022384&text=Ciao%20vorrei%20sapere%20disponibilit%C3%A0%20e%20prezzi%20per%20una%20festa%20🎉" target="_blank" class="btn whatsapp-btn">
+      📲 Prenota ora su WhatsApp
+    </a>
   </div>
 </div>
 
@@ -264,10 +273,8 @@ z-index:2;
   <img id="popup-img">
 </div>
 
-<!-- WHATSAPP -->
-<a href="https://api.whatsapp.com/send?phone=393755022384&text=Ciao%20vorrei%20informazioni%20per%20una%20festa" target="_blank" class="btn whatsapp-btn">
-  📲 Prenota ora su WhatsApp
-</a>
+<!-- WHATSAPP FISSO -->
+<a href="https://api.whatsapp.com/send?phone=393755022384&text=Ciao%20vorrei%20prenotare%20una%20festa" target="_blank" class="whatsapp">💬</a>
 
 <!-- SCRIPT -->
 <script>

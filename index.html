@@ -61,7 +61,6 @@ body {
   animation:gradientMove 6s linear infinite;
 }
 
-/* luce */
 .logo-text::after {
   content:'';
   position:absolute;
@@ -73,15 +72,9 @@ body {
   animation:shine 3s infinite;
 }
 
-@keyframes gradientMove {
-  100% {background-position:300%;}
-}
-@keyframes shine {
-  100% {left:100%;}
-}
-@keyframes floatText {
-  50% {transform:translateY(-5px);}
-}
+@keyframes gradientMove {100% {background-position:300%;}}
+@keyframes shine {100% {left:100%;}}
+@keyframes floatText {50% {transform:translateY(-5px);}}
 
 /* HERO */
 .hero {
@@ -125,6 +118,16 @@ body {
   background:#f4fff8;
 }
 
+/* BOX */
+.box {
+  background:white;
+  border-radius:15px;
+  padding:20px;
+  margin:10px auto;
+  max-width:800px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
 /* SERVIZI */
 .services {
   display:flex;
@@ -157,18 +160,6 @@ body {
   cursor:pointer;
 }
 
-/* POPUP */
-#popup {
-  display:none;
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.9);
-  justify-content:center;
-  align-items:center;
-}
-#popup img {max-width:90%;}
-
 /* PREZZI */
 .prices {
   display:flex;
@@ -184,7 +175,7 @@ body {
   box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* CONTATTI */
+/* WHATSAPP */
 .whatsapp {
   position:fixed;
   bottom:20px;
@@ -207,21 +198,9 @@ body {
 .balloons span:nth-child(1){left:15%;animation-duration:14s;}
 .balloons span:nth-child(2){left:50%;animation-duration:18s;}
 .balloons span:nth-child(3){left:80%;animation-duration:16s;}
+@keyframes floatUp {100% {transform:translateY(-120vh);}}
 
-@keyframes floatUp {
-  100% {transform:translateY(-120vh);}
-}
-
-/* CORIANDOLI REALI */
-.confetti {
-  position:fixed;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  top:0;
-  left:0;
-}
-
+/* CORIANDOLI */
 .confetti span {
   position:absolute;
   width:6px;
@@ -230,39 +209,40 @@ body {
   opacity:0.3;
   animation:fall 10s linear infinite;
 }
-
 .confetti span:nth-child(odd){background:#ffb347;}
+@keyframes fall {100% {transform:translateY(100vh);}}
 
-@keyframes fall {
-  0% {transform:translateY(-10vh);}
-  100% {transform:translateY(110vh);}
+/* SOCIAL */
+.social a {
+  display:inline-block;
+  margin:10px;
+  font-size:18px;
+  text-decoration:none;
+  color:white;
+  background:#00c853;
+  padding:10px 20px;
+  border-radius:20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- PALLONCINI -->
 <div class="balloons">
-  <span>🎈</span>
-  <span>🎈</span>
-  <span>🎈</span>
+  <span>🎈</span><span>🎈</span><span>🎈</span>
 </div>
 
-<!-- CORIANDOLI -->
 <div class="confetti">
   <span style="left:10%"></span>
-  <span style="left:30%"></span>
-  <span style="left:50%"></span>
+  <span style="left:40%"></span>
   <span style="left:70%"></span>
-  <span style="left:90%"></span>
 </div>
 
 <nav class="menu">
   <a href="#">Home</a>
+  <a href="#eventi">Eventi</a>
+  <a href="#campus">Campus</a>
   <a href="#servizi">Servizi</a>
-  <a href="#galleria">Sala</a>
-  <a href="#prezzi">Prezzi</a>
   <a href="#contatti">Contatti</a>
 </nav>
 
@@ -280,6 +260,27 @@ body {
   </div>
 </div>
 
+<!-- IN EVIDENZA -->
+<div class="section">
+  <h2>⭐ In Evidenza</h2>
+  <div class="box">
+    🎉 Prossimo evento: Festa di Primavera!  
+    <br>📅 Prenotazioni aperte!
+  </div>
+</div>
+
+<!-- EVENTI -->
+<div class="section" id="eventi">
+  <h2>🎉 Eventi</h2>
+  <div class="box">Organizziamo eventi a tema tutto l’anno.</div>
+</div>
+
+<!-- CAMPUS -->
+<div class="section" id="campus">
+  <h2>🏕️ Campus estivo</h2>
+  <div class="box">Campus estivi e attività per bambini.</div>
+</div>
+
 <!-- SERVIZI -->
 <div class="section" id="servizi">
   <h2>I nostri servizi</h2>
@@ -293,23 +294,12 @@ body {
   </div>
 </div>
 
-<!-- GALLERIA -->
-<div class="section" id="galleria">
-  <h2>La nostra sala</h2>
-  <div class="gallery-pro">
-    <img src="sala1.jpg" onclick="openImg(this.src)">
-    <img src="sala2.jpg" onclick="openImg(this.src)">
-    <img src="sala3.jpg" onclick="openImg(this.src)">
-  </div>
-</div>
-
-<!-- PREZZI -->
-<div class="section" id="prezzi">
-  <h2>Prezzi</h2>
-  <div class="prices">
-    <div class="price-box">🎉 Base €100</div>
-    <div class="price-box">🎈 Standard €150</div>
-    <div class="price-box">✨ Premium €200</div>
+<!-- SOCIAL -->
+<div class="section">
+  <h2>Seguici</h2>
+  <div class="social">
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
   </div>
 </div>
 
@@ -318,27 +308,9 @@ body {
   <h2>Contatti</h2>
   <p>📍 Via Cosenza 14, Taranto</p>
   <p>📞 3755022384</p>
-
-  <iframe src="https://www.google.com/maps?q=Via%20Cosenza%2014%20Taranto&output=embed"
-  width="100%" height="300" style="border:0;border-radius:15px;margin-top:20px;"></iframe>
-
-  <a href="https://api.whatsapp.com/send?phone=393755022384" class="btn">
-    📲 Contattaci su WhatsApp
-  </a>
-</div>
-
-<div id="popup" onclick="this.style.display='none'">
-  <img id="popup-img">
 </div>
 
 <a href="https://api.whatsapp.com/send?phone=393755022384" class="whatsapp">💬</a>
-
-<script>
-function openImg(src){
-  document.getElementById('popup').style.display='flex';
-  document.getElementById('popup-img').src = src;
-}
-</script>
 
 </body>
 </html>

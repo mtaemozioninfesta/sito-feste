@@ -7,14 +7,51 @@
 
 <style>
 body {margin:0;font-family:Arial;}
-/* HEADER */
+/* HEADER GRANDE */
 .header {
+  background:#ffffff;
+  padding:30px 10px;
+  display:flex;
+  justify-content:center;
+}
+
+/* BOX CENTRALE */
+.header-box {
   display:flex;
   align-items:center;
-  justify-content:center;
-  gap:15px;
-  padding:15px;
-  background:white;
+  gap:20px;
+  padding:20px 40px;
+  border-radius:50px;
+  background:linear-gradient(135deg,#ff7eb3,#ffb347,#00c9ff);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  animation:float 3s ease-in-out infinite;
+}
+
+/* LOGO */
+.logo-img {
+  width:80px;
+  border-radius:50%;
+}
+
+/* TESTO */
+.logo-text {
+  margin:0;
+  font-size:40px;
+  color:white;
+  font-weight:bold;
+}
+
+.subtitle {
+  margin:0;
+  font-size:18px;
+  color:white;
+}
+
+/* ANIMAZIONE FLUTTUANTE */
+@keyframes float {
+  0% {transform:translateY(0);}
+  50% {transform:translateY(-8px);}
+  100% {transform:translateY(0);}
 }
 
 .logo-img {
@@ -230,10 +267,14 @@ body {margin:0;font-family:Arial;}
 
 <!-- LOGO -->
 <div class="header">
-  <img src="logo.jpg" class="logo-img">
-  <h1 class="logo-text">MTA Emozioni in Festa</h1>
+  <div class="header-box">
+    <img src="logo.jpg" class="logo-img">
+    <div>
+      <h1 class="logo-text">MTA</h1>
+      <p class="subtitle">Emozioni in Festa</p>
+    </div>
+  </div>
 </div>
-
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">

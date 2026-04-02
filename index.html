@@ -3,20 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MTA Emozioni in Festa</title>
+<meta name="description" content="Sala feste a Taranto con animazione, mascotte e gonfiabili per compleanni bambini.">
 
 <style>
 body {margin:0;font-family:Arial;}
 
-/* HEADER FULL */
+/* MENU */
+.menu {
+  position:sticky;
+  top:0;
+  background:white;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:10px;
+  z-index:999;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+.menu a {text-decoration:none;color:black;font-weight:bold;}
+.menu a:hover {color:#ff7b00;}
+
+/* HEADER WOW */
 .header {
   position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:25px 20px;
+  padding:30px 20px;
   background:white;
+  overflow:hidden;
 }
+
 .logo-img {
   position:absolute;
   left:20px;
@@ -24,18 +43,43 @@ body {margin:0;font-family:Arial;}
 }
 
 .logo-text {
-  font-size:50px;
+  font-size:55px;
   font-weight:bold;
-  margin:0;
   text-align:center;
-  line-height:1.2;
-
-  background: linear-gradient(45deg,#ff7eb3,#ffb347,#00c9ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
+  margin:0;
+  position:relative;
   animation: floatText 3s ease-in-out infinite;
 }
+
+.logo-text span {
+  background: linear-gradient(45deg,#ff7eb3,#ffb347,#00c9ff,#ff7eb3);
+  background-size:300%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:gradientMove 6s linear infinite;
+}
+
+.logo-text::after {
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.8), transparent);
+  animation:shine 3s infinite;
+}
+
+@keyframes gradientMove {
+  0% {background-position:0%;}
+  100% {background-position:300%;}
+}
+
+@keyframes shine {
+  0% {left:-100%;}
+  100% {left:100%;}
+}
+
 @keyframes floatText {
   0% {transform:translateY(0);}
   50% {transform:translateY(-5px);}
@@ -63,10 +107,7 @@ body {margin:0;font-family:Arial;}
   z-index:1;
 }
 
-.hero-content {
-  position:relative;
-  z-index:2;
-}
+.hero-content {position:relative;z-index:2;}
 
 /* BUTTON */
 .btn {
@@ -80,17 +121,9 @@ body {margin:0;font-family:Arial;}
   font-weight:bold;
   transition:0.3s;
 }
+.btn:hover {background:#ff7b00;transform:scale(1.05);}
 
-.btn:hover {
-  background:#ff7b00;
-  transform:scale(1.05);
-}
-
-/* ANIMAZIONE WHATSAPP */
-.whatsapp-btn {
-  animation:pulse 1.5s infinite;
-}
-
+.whatsapp-btn {animation:pulse 1.5s infinite;}
 @keyframes pulse {
   0% {transform:scale(1);}
   50% {transform:scale(1.08);}
@@ -98,11 +131,7 @@ body {margin:0;font-family:Arial;}
 }
 
 /* SEZIONI */
-.section {
-  padding:60px 20px;
-  text-align:center;
-  background:#f9f9f9;
-}
+.section {padding:60px 20px;text-align:center;background:#f9f9f9;}
 
 /* SERVIZI */
 .services {
@@ -127,23 +156,15 @@ body {margin:0;font-family:Arial;}
   object-fit:cover;
 }
 
-.service h3 {
-  margin:10px 0;
-}
+.service h3 {margin:10px 0;}
+.service p {padding:0 15px 15px;font-size:14px;}
 
-.service p {
-  padding:0 15px 15px;
-  font-size:14px;
-}
-
-.service:hover {
-  transform:translateY(-5px);
-}
+.service:hover {transform:translateY(-5px);}
 
 /* GALLERIA */
 .gallery-pro {
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
   gap:15px;
 }
 
@@ -153,63 +174,29 @@ body {margin:0;font-family:Arial;}
   cursor:pointer;
   transition:0.3s;
 }
-
-.gallery-pro img:hover {
-  transform:scale(1.08);
-}
+.gallery-pro img:hover {transform:scale(1.08);}
 
 /* POPUP */
 #popup {
   display:none;
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  top:0;left:0;
+  width:100%;height:100%;
   background:rgba(0,0,0,0.9);
   justify-content:center;
   align-items:center;
-  z-index:999;
 }
-
-#popup img {
-  max-width:90%;
-  max-height:90%;
-}
+#popup img {max-width:90%;max-height:90%;}
 
 /* RECENSIONI */
-.reviews {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-}
-
-.review {
-  background:white;
-  padding:20px;
-  border-radius:15px;
-  width:250px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
+.reviews {display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
+.review {background:white;padding:20px;border-radius:15px;width:250px;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
 
 /* PREZZI */
-.prices {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-}
+.prices {display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
+.price-box {background:white;padding:25px;border-radius:15px;width:220px;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
 
-.price-box {
-  background:white;
-  padding:25px;
-  border-radius:15px;
-  width:220px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* WHATSAPP FISSO */
+/* WHATSAPP */
 .whatsapp {
   position:fixed;
   bottom:20px;
@@ -223,41 +210,35 @@ body {margin:0;font-family:Arial;}
 }
 
 /* ANIMAZIONI */
-.fade {
-  opacity:0;
-  transform:translateY(30px);
-  transition:0.8s;
-}
-
-.fade.show {
-  opacity:1;
-  transform:translateY(0);
-}
+.fade {opacity:0;transform:translateY(30px);transition:0.8s;}
+.fade.show {opacity:1;transform:translateY(0);}
 
 /* MOBILE */
 @media(max-width:768px){
-  .logo-text {
-    font-size:22px;
-  }
-
-  .logo-img {
-    position:static;
-    margin-bottom:10px;
-  }
-
-  .header {
-    flex-direction:column;
-  }
+  .logo-text {font-size:22px;}
+  .logo-img {position:static;margin-bottom:10px;}
+  .header {flex-direction:column;}
 }
 </style>
 </head>
 
 <body>
 
+<!-- MENU -->
+<nav class="menu">
+  <a href="#">Home</a>
+  <a href="#servizi">Servizi</a>
+  <a href="#galleria">Sala</a>
+  <a href="#prezzi">Prezzi</a>
+  <a href="#contatti">Contatti</a>
+</nav>
+
 <!-- HEADER -->
 <div class="header">
   <img src="logo.jpg" class="logo-img">
-  <h1 class="logo-text">MTA Emozioni in Festa 🎉 Compleanni • Mascotte • Eventi</h1>
+  <h1 class="logo-text">
+    <span>MTA Emozioni in Festa 🎉 Feste Indimenticabili per Bambini</span>
+  </h1>
 </div>
 
 <!-- HERO -->
@@ -265,46 +246,58 @@ body {margin:0;font-family:Arial;}
   <div class="hero-content">
     <h1>🎉 La festa che tuo figlio non dimenticherà mai</h1>
     <p>Compleanni, mascotte e divertimento garantito a Taranto</p>
-    <a href="https://api.whatsapp.com/send?phone=393755022384&text=Ciao%20vorrei%20sapere%20disponibilit%C3%A0%20e%20prezzi%20per%20una%20festa%20🎉" target="_blank" class="btn whatsapp-btn">
+    <a href="https://api.whatsapp.com/send?phone=393755022384&text=Ciao%20vorrei%20informazioni%20per%20una%20festa" target="_blank" class="btn whatsapp-btn">
       📲 Prenota ora su WhatsApp
     </a>
   </div>
 </div>
 
 <!-- SERVIZI -->
-<div class="section fade">
+<div class="section fade" id="servizi">
   <h2>I nostri servizi</h2>
   <div class="services">
 
     <div class="service">
       <img src="compleanni.jpg">
       <h3>🎂 Compleanni</h3>
-      <p>Feste complete con giochi, musica e divertimento.</p>
+      <p>Feste complete con giochi e musica.</p>
     </div>
 
     <div class="service">
       <img src="mascotte.jpg">
       <h3>🎭 Mascotte</h3>
-      <p>Personaggi amati per rendere ogni festa speciale.</p>
+      <p>Personaggi per rendere la festa unica.</p>
+    </div>
+
+    <div class="service">
+      <img src="noleggio-mascotte.jpg">
+      <h3>🧸 Noleggio Mascotte</h3>
+      <p>Noleggio mascotte per eventi e feste.</p>
     </div>
 
     <div class="service">
       <img src="allestimenti.jpg">
       <h3>🎈 Allestimenti</h3>
-      <p>Decorazioni e scenografie personalizzate.</p>
+      <p>Decorazioni personalizzate.</p>
+    </div>
+
+    <div class="service">
+      <img src="gonfiabili.jpg">
+      <h3>🏰 Noleggio Gonfiabili</h3>
+      <p>Gonfiabili per divertimento assicurato.</p>
     </div>
 
     <div class="service">
       <img src="animazione.jpg">
       <h3>🎤 Animazione</h3>
-      <p>Giochi, baby dance e intrattenimento.</p>
+      <p>Giochi e intrattenimento.</p>
     </div>
 
   </div>
 </div>
 
 <!-- GALLERIA -->
-<div class="section fade">
+<div class="section fade" id="galleria">
   <h2>La nostra sala</h2>
   <div class="gallery-pro">
     <img src="sala1.jpg" onclick="openImg(this.src)">
@@ -315,29 +308,32 @@ body {margin:0;font-family:Arial;}
 
 <!-- RECENSIONI -->
 <div class="section fade">
-  <h2>Cosa dicono i clienti</h2>
+  <h2>Recensioni</h2>
   <div class="reviews">
-    <div class="review">⭐⭐⭐⭐⭐ Festa stupenda!</div>
-    <div class="review">⭐⭐⭐⭐⭐ Mascotte fantastiche!</div>
+    <div class="review">⭐⭐⭐⭐⭐ Festa fantastica!</div>
     <div class="review">⭐⭐⭐⭐⭐ Tutto perfetto!</div>
+    <div class="review">⭐⭐⭐⭐⭐ Bambini felicissimi!</div>
   </div>
 </div>
 
 <!-- PREZZI -->
-<div class="section fade">
-  <h2>I nostri pacchetti</h2>
+<div class="section fade" id="prezzi">
+  <h2>Prezzi</h2>
   <div class="prices">
-    <div class="price-box"><h3>Base</h3><p>€100</p></div>
-    <div class="price-box"><h3>Standard</h3><p>€150</p></div>
-    <div class="price-box"><h3>Premium</h3><p>€200</p></div>
+    <div class="price-box">Base €100</div>
+    <div class="price-box">Standard €150</div>
+    <div class="price-box">Premium €200</div>
   </div>
 </div>
 
 <!-- CONTATTI -->
-<div class="section fade">
+<div class="section fade" id="contatti">
   <h2>Contatti</h2>
   <p>📍 Via Cosenza 14, Taranto</p>
   <p>📞 375 5022384</p>
+
+  <iframe src="https://www.google.com/maps?q=Via%20Cosenza%2014%20Taranto&output=embed"
+  width="100%" height="300" style="border:0;border-radius:15px;margin-top:20px;"></iframe>
 </div>
 
 <!-- POPUP -->
@@ -346,22 +342,21 @@ body {margin:0;font-family:Arial;}
 </div>
 
 <!-- WHATSAPP -->
-<a href="https://api.whatsapp.com/send?phone=393755022384&text=Ciao%20vorrei%20prenotare%20una%20festa" target="_blank" class="whatsapp">💬</a>
+<a href="https://api.whatsapp.com/send?phone=393755022384" target="_blank" class="whatsapp">💬</a>
 
 <script>
 function openImg(src){
   document.getElementById('popup').style.display='flex';
-  document.getElementById('popup-img').src = src;
+  document.getElementById('popup-img').src=src;
 }
-
 function closeImg(){
   document.getElementById('popup').style.display='none';
 }
 
-const elements=document.querySelectorAll('.fade');
+const els=document.querySelectorAll('.fade');
 window.addEventListener('scroll',()=>{
-  elements.forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight-100){
+  els.forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-100){
       el.classList.add('show');
     }
   });

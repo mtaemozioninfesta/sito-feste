@@ -37,7 +37,6 @@ body {
   justify-content:center;
   padding:30px 20px;
   background:white;
-  overflow:hidden;
 }
 
 .logo-img {
@@ -51,43 +50,19 @@ body {
   font-weight:bold;
   text-align:center;
   margin:0;
-  position:relative;
-  animation: floatText 3s ease-in-out infinite;
+  animation: floatText 3s infinite;
 }
 
 .logo-text span {
-  background: linear-gradient(45deg,#ff7eb3,#ffb347,#00c9ff,#ff7eb3);
-  background-size:300%;
+  background: linear-gradient(45deg,#ff7eb3,#ffb347,#00c9ff);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  animation:gradientMove 6s linear infinite;
-}
-
-.logo-text::after {
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.8), transparent);
-  animation:shine 3s infinite;
-}
-
-@keyframes gradientMove {
-  0% {background-position:0%;}
-  100% {background-position:300%;}
-}
-
-@keyframes shine {
-  0% {left:-100%;}
-  100% {left:100%;}
 }
 
 @keyframes floatText {
-  0% {transform:translateY(0);}
-  50% {transform:translateY(-5px);}
-  100% {transform:translateY(0);}
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-5px);}
+  100%{transform:translateY(0);}
 }
 
 /* HERO */
@@ -108,10 +83,12 @@ body {
   width:100%;
   height:100%;
   background:rgba(0,0,0,0.5);
-  z-index:1;
 }
 
-.hero-content {position:relative;z-index:2;}
+.hero-content {
+  position:relative;
+  z-index:2;
+}
 
 /* BUTTON */
 .btn {
@@ -122,20 +99,23 @@ body {
   color:white;
   text-decoration:none;
   border-radius:30px;
-  font-weight:bold;
-  transition:0.3s;
 }
-.btn:hover {background:#ff7b00;transform:scale(1.05);}
+.btn:hover {background:#ff7b00;}
 
-.whatsapp-btn {animation:pulse 1.5s infinite;}
+.whatsapp-btn {
+  animation:pulse 1.5s infinite;
+}
+
 @keyframes pulse {
-  0% {transform:scale(1);}
   50% {transform:scale(1.08);}
-  100% {transform:scale(1);}
 }
 
 /* SEZIONI */
-.section {padding:60px 20px;text-align:center;background:#f9f9f9;}
+.section {
+  padding:60px 20px;
+  text-align:center;
+  background:#f9f9f9;
+}
 
 /* SERVIZI */
 .services {
@@ -301,6 +281,56 @@ body {
   </div>
 </div>
 
+<!-- SERVIZI -->
+<div class="section fade" id="servizi">
+  <h2>I nostri servizi</h2>
+  <div class="services">
+
+    <div class="service"><img src="compleanni.jpg"><h3>🎂 Compleanni</h3><p>Feste complete.</p></div>
+    <div class="service"><img src="mascotte.jpg"><h3>🎭 Mascotte</h3><p>Personaggi.</p></div>
+    <div class="service"><img src="noleggio-mascotte.jpg"><h3>🧸 Noleggio Mascotte</h3><p>Noleggio.</p></div>
+    <div class="service"><img src="allestimenti.jpg"><h3>🎈 Allestimenti</h3><p>Decorazioni.</p></div>
+    <div class="service"><img src="gonfiabili.jpg"><h3>🏰 Gonfiabili</h3><p>Divertimento.</p></div>
+    <div class="service"><img src="animazione.jpg"><h3>🎤 Animazione</h3><p>Giochi.</p></div>
+
+  </div>
+</div>
+
+<!-- GALLERIA -->
+<div class="section fade" id="galleria">
+  <h2>La nostra sala</h2>
+  <div class="gallery-pro">
+    <img src="sala1.jpg" onclick="openImg(this.src)">
+    <img src="sala2.jpg" onclick="openImg(this.src)">
+    <img src="sala3.jpg" onclick="openImg(this.src)">
+  </div>
+</div>
+
+<!-- CONTATTI -->
+<div class="section fade" id="contatti">
+  <h2>Contatti</h2>
+  <p>📍 Via Cosenza 14, Taranto</p>
+  <p>📞 3755022384</p>
+</div>
+
+<!-- POPUP -->
+<div id="popup" onclick="closeImg()">
+  <img id="popup-img">
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://api.whatsapp.com/send?phone=393755022384" target="_blank" class="whatsapp">💬</a>
+
+<script>
+function openImg(src){
+  document.getElementById('popup').style.display='flex';
+  document.getElementById('popup-img').src = src;
+}
+
+function closeImg(){
+  document.getElementById('popup').style.display='none';
+}
+</script>
 
 </body>
 </html>

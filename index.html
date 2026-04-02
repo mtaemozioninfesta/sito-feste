@@ -7,7 +7,27 @@
 
 <style>
 body {margin:0;font-family:Arial;}
+/* HEADER */
+.header {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  padding:15px;
+  background:white;
+}
 
+.logo-img {
+  max-width:80px;
+}
+
+.logo-text {
+  font-size:26px;
+  font-weight:bold;
+  background: linear-gradient(45deg, #ff7eb3, #ffb347, #00c9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 /* LOGO */
 .logo {text-align:center;padding:10px;background:white;}
 .logo img {max-width:150px;}
@@ -209,8 +229,9 @@ body {margin:0;font-family:Arial;}
 <body>
 
 <!-- LOGO -->
-<div class="logo">
-  <img src="logo.jpg">
+<div class="header">
+  <img src="logo.jpg" class="logo-img">
+  <h1 class="logo-text">MTA Emozioni in Festa</h1>
 </div>
 
 <!-- HERO -->

@@ -3,71 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MTA Mascotte Taranto</title>
+<title>MTA Emozioni in Festa</title>
 
 <style>
 body {margin:0;font-family:Arial;}
-/* HEADER GRANDE */
-.header {
-  background:#ffffff;
-  padding:30px 10px;
-  display:flex;
-  justify-content:center;
-}
 
-/* BOX CENTRALE */
-.header-box {
+/* HEADER FULL */
+.header {
   display:flex;
   align-items:center;
-  gap:20px;
+  justify-content:space-between;
   padding:20px 40px;
-  border-radius:50px;
-  background:linear-gradient(135deg,#ff7eb3,#ffb347,#00c9ff);
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
-  animation:float 3s ease-in-out infinite;
+  background:white;
 }
 
-/* LOGO */
 .logo-img {
   width:80px;
-  border-radius:50%;
-}
-
-/* TESTO */
-.logo-text {
-  margin:0;
-  font-size:40px;
-  color:white;
-  font-weight:bold;
-}
-
-.subtitle {
-  margin:0;
-  font-size:18px;
-  color:white;
-}
-
-/* ANIMAZIONE FLUTTUANTE */
-@keyframes float {
-  0% {transform:translateY(0);}
-  50% {transform:translateY(-8px);}
-  100% {transform:translateY(0);}
-}
-
-.logo-img {
-  max-width:80px;
 }
 
 .logo-text {
-  font-size:26px;
+  font-size:60px;
   font-weight:bold;
-  background: linear-gradient(45deg, #ff7eb3, #ffb347, #00c9ff);
+  margin:0;
+  background: linear-gradient(45deg,#ff7eb3,#ffb347,#00c9ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: floatText 3s ease-in-out infinite;
 }
-/* LOGO */
-.logo {text-align:center;padding:10px;background:white;}
-.logo img {max-width:150px;}
+
+@keyframes floatText {
+  0% {transform:translateY(0);}
+  50% {transform:translateY(-5px);}
+  100% {transform:translateY(0);}
+}
 
 /* HERO */
 .hero {
@@ -113,7 +81,7 @@ body {margin:0;font-family:Arial;}
   transform:scale(1.05);
 }
 
-/* WHATSAPP HERO ANIMATO */
+/* ANIMAZIONE WHATSAPP */
 .whatsapp-btn {
   animation:pulse 1.5s infinite;
 }
@@ -125,7 +93,11 @@ body {margin:0;font-family:Arial;}
 }
 
 /* SEZIONI */
-.section {padding:60px 20px;text-align:center;background:#f9f9f9;}
+.section {
+  padding:60px 20px;
+  text-align:center;
+  background:#f9f9f9;
+}
 
 /* SERVIZI */
 .services {
@@ -162,6 +134,7 @@ body {margin:0;font-family:Arial;}
 .service:hover {
   transform:translateY(-5px);
 }
+
 /* GALLERIA */
 .gallery-pro {
   display:grid;
@@ -172,8 +145,8 @@ body {margin:0;font-family:Arial;}
 .gallery-pro img {
   width:100%;
   border-radius:15px;
-  transition:0.3s;
   cursor:pointer;
+  transition:0.3s;
 }
 
 .gallery-pro img:hover {
@@ -248,7 +221,7 @@ body {margin:0;font-family:Arial;}
 .fade {
   opacity:0;
   transform:translateY(30px);
-  transition: all 0.8s ease;
+  transition:0.8s;
 }
 
 .fade.show {
@@ -258,6 +231,8 @@ body {margin:0;font-family:Arial;}
 
 /* MOBILE */
 @media(max-width:768px){
+  .logo-text {font-size:30px;}
+  .header {flex-direction:column;gap:10px;}
   .hero h1 {font-size:26px;}
 }
 </style>
@@ -265,16 +240,12 @@ body {margin:0;font-family:Arial;}
 
 <body>
 
-<!-- LOGO -->
+<!-- HEADER -->
 <div class="header">
-  <div class="header-box">
-    <img src="logo.jpg" class="logo-img">
-    <div>
-      <h1 class="logo-text">MTA</h1>
-      <p class="subtitle">Emozioni in Festa</p>
-    </div>
-  </div>
+  <img src="logo.jpg" class="logo-img">
+  <h1 class="logo-text">MTA Emozioni in Festa</h1>
 </div>
+
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
@@ -291,39 +262,37 @@ body {margin:0;font-family:Arial;}
   <h2>I nostri servizi</h2>
   <div class="services">
 
-  <div class="service">
-    <img src="compleanni.jpg">
-    <h3>🎂 Compleanni</h3>
-    <p>Organizziamo feste complete per bambini con musica, giochi e divertimento assicurato.</p>
-  </div>
+    <div class="service">
+      <img src="compleanni.jpg">
+      <h3>🎂 Compleanni</h3>
+      <p>Feste complete con giochi, musica e divertimento.</p>
+    </div>
 
-  <div class="service">
-    <img src="mascotte.jpg">
-    <h3>🎭 Mascotte</h3>
-    <p>Personaggi amati dai bambini per rendere ogni festa unica e indimenticabile.</p>
-  </div>
+    <div class="service">
+      <img src="mascotte.jpg">
+      <h3>🎭 Mascotte</h3>
+      <p>Personaggi amati per rendere ogni festa speciale.</p>
+    </div>
 
-  <div class="service">
-    <img src="allestimenti.jpg">
-    <h3>🎈 Allestimenti</h3>
-    <p>Decorazioni a tema, palloncini e scenografie personalizzate per ogni evento.</p>
-  </div>
+    <div class="service">
+      <img src="allestimenti.jpg">
+      <h3>🎈 Allestimenti</h3>
+      <p>Decorazioni e scenografie personalizzate.</p>
+    </div>
 
-  <div class="service">
-    <img src="animazione.jpg">
-    <h3>🎤 Animazione</h3>
-    <p>Giochi, baby dance e intrattenimento per coinvolgere tutti i bambini.</p>
-  </div>
+    <div class="service">
+      <img src="animazione.jpg">
+      <h3>🎤 Animazione</h3>
+      <p>Giochi, baby dance e intrattenimento.</p>
+    </div>
 
+  </div>
 </div>
 
 <!-- GALLERIA -->
 <div class="section fade">
   <h2>La nostra sala</h2>
   <div class="gallery-pro">
-    <img src="sala1.jpg" onclick="openImg(this.src)">
-    <img src="sala2.jpg" onclick="openImg(this.src)">
-    <img src="sala3.jpg" onclick="openImg(this.src)">
     <img src="sala1.jpg" onclick="openImg(this.src)">
     <img src="sala2.jpg" onclick="openImg(this.src)">
     <img src="sala3.jpg" onclick="openImg(this.src)">
@@ -335,7 +304,7 @@ body {margin:0;font-family:Arial;}
   <h2>Cosa dicono i clienti</h2>
   <div class="reviews">
     <div class="review">⭐⭐⭐⭐⭐ Festa stupenda!</div>
-    <div class="review">⭐⭐⭐⭐⭐ Mascotte bellissime!</div>
+    <div class="review">⭐⭐⭐⭐⭐ Mascotte fantastiche!</div>
     <div class="review">⭐⭐⭐⭐⭐ Tutto perfetto!</div>
   </div>
 </div>
@@ -344,21 +313,9 @@ body {margin:0;font-family:Arial;}
 <div class="section fade">
   <h2>I nostri pacchetti</h2>
   <div class="prices">
-    <div class="price-box">
-      <h3>Base</h3>
-      <p>🎉 Sala + musica</p>
-      <p><b>€100</b></p>
-    </div>
-    <div class="price-box">
-      <h3>Standard</h3>
-      <p>🎉 Sala + animazione</p>
-      <p><b>€150</b></p>
-    </div>
-    <div class="price-box">
-      <h3>Premium</h3>
-      <p>🎉 Sala + mascotte</p>
-      <p><b>€200</b></p>
-    </div>
+    <div class="price-box"><h3>Base</h3><p>€100</p></div>
+    <div class="price-box"><h3>Standard</h3><p>€150</p></div>
+    <div class="price-box"><h3>Premium</h3><p>€200</p></div>
   </div>
 </div>
 
@@ -374,10 +331,9 @@ body {margin:0;font-family:Arial;}
   <img id="popup-img">
 </div>
 
-<!-- WHATSAPP FISSO -->
+<!-- WHATSAPP -->
 <a href="https://api.whatsapp.com/send?phone=393755022384&text=Ciao%20vorrei%20prenotare%20una%20festa" target="_blank" class="whatsapp">💬</a>
 
-<!-- SCRIPT -->
 <script>
 function openImg(src){
   document.getElementById('popup').style.display='flex';
@@ -388,12 +344,10 @@ function closeImg(){
   document.getElementById('popup').style.display='none';
 }
 
-const elements = document.querySelectorAll('.fade');
-window.addEventListener('scroll', () => {
-  elements.forEach(el => {
-    const position = el.getBoundingClientRect().top;
-    const screen = window.innerHeight;
-    if(position < screen - 100){
+const elements=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+  elements.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-100){
       el.classList.add('show');
     }
   });

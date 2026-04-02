@@ -6,21 +6,11 @@
 <title>MTA Mascotte Taranto</title>
 
 <style>
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
-}
+body {margin:0;font-family:Arial;}
 
 /* LOGO */
-.logo {
-  text-align:center;
-  padding:10px;
-  background:white;
-}
-
-.logo img {
-  max-width:150px;
-}
+.logo {text-align:center;padding:10px;background:white;}
+.logo img {max-width:150px;}
 
 /* HERO */
 .hero {
@@ -34,7 +24,6 @@ body {
   position:relative;
 }
 
-/* overlay scuro */
 .hero::after {
   content:'';
   position:absolute;
@@ -43,52 +32,141 @@ body {
   background:rgba(0,0,0,0.5);
 }
 
-.hero-content {
-  position:relative;
-}
+.hero-content {position:relative;}
 
-/* BOTTONE */
+/* BUTTON */
 .btn {
   display:inline-block;
   margin-top:20px;
-  padding:15px 25px;
+  padding:15px 30px;
   background:#ffb347;
   color:white;
   text-decoration:none;
   border-radius:30px;
   font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover {
+  background:#ff7b00;
+  transform:scale(1.05);
 }
 
 /* SEZIONI */
-.section {
-  padding:50px;
-  text-align:center;
-}
+.section {padding:60px 20px;text-align:center;background:#f9f9f9;}
 
+/* SERVIZI */
 .services {
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
+  gap:20px;
 }
 
 .service {
-  background:#fff;
-  margin:10px;
+  background:white;
   padding:20px;
   border-radius:10px;
+  width:200px;
   box-shadow:0 5px 10px rgba(0,0,0,0.1);
 }
 
-/* GALLERIA */
-.gallery img {
-  width:30%;
-  margin:1%;
-  border-radius:10px;
+/* GALLERIA PRO */
+.gallery-pro {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap:15px;
+}
+
+.gallery-pro img {
+  width:100%;
+  border-radius:15px;
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.gallery-pro img:hover {
+  transform:scale(1.08);
+}
+
+/* POPUP */
+#popup {
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+#popup img {
+  max-width:90%;
+  max-height:90%;
+}
+
+/* RECENSIONI */
+.reviews {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.review {
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  width:250px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* PREZZI */
+.prices {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.price-box {
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  width:220px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  font-size:30px;
+  padding:15px;
+  border-radius:50%;
+  text-decoration:none;
+}
+
+/* ANIMAZIONI */
+.fade {
+  opacity:0;
+  transform:translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade.show {
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* MOBILE */
 @media(max-width:768px){
-  .gallery img {width:90%;}
   .hero h1 {font-size:26px;}
 }
 </style>
@@ -98,20 +176,20 @@ body {
 
 <!-- LOGO -->
 <div class="logo">
-  <img src="logo.jpg" alt="Logo">
+  <img src="logo.jpg">
 </div>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
-    <h1>🎉 Emozioni in Festa</h1>
-    <p>Sala feste e mascotte a Taranto</p>
-    <a href="https://wa.me/393755022384" class="btn">Prenota su WhatsApp</a>
+    <h1>🎉 La festa che tuo figlio non dimenticherà mai</h1>
+    <p>Compleanni, mascotte e divertimento garantito a Taranto</p>
+    <a href="https://wa.me/393755022384" class="btn">Prenota ora su WhatsApp</a>
   </div>
 </div>
 
 <!-- SERVIZI -->
-<div class="section">
+<div class="section fade">
   <h2>I nostri servizi</h2>
   <div class="services">
     <div class="service">🎂 Compleanni</div>
@@ -122,19 +200,87 @@ body {
 </div>
 
 <!-- GALLERIA -->
-<div class="section gallery">
+<div class="section fade">
   <h2>La nostra sala</h2>
-  <img src="sfondo.jpg">
-  <img src="sfondo.jpg">
-  <img src="sfondo.jpg">
+  <div class="gallery-pro">
+    <img src="sala1.jpg" onclick="openImg(this.src)">
+    <img src="sala2.jpg" onclick="openImg(this.src)">
+    <img src="sala3.jpg" onclick="openImg(this.src)">
+    <img src="sala1.jpg" onclick="openImg(this.src)">
+    <img src="sala2.jpg" onclick="openImg(this.src)">
+    <img src="sala3.jpg" onclick="openImg(this.src)">
+  </div>
+</div>
+
+<!-- RECENSIONI -->
+<div class="section fade">
+  <h2>Cosa dicono i clienti</h2>
+  <div class="reviews">
+    <div class="review">⭐⭐⭐⭐⭐ Festa stupenda!</div>
+    <div class="review">⭐⭐⭐⭐⭐ Mascotte bellissime!</div>
+    <div class="review">⭐⭐⭐⭐⭐ Tutto perfetto!</div>
+  </div>
+</div>
+
+<!-- PREZZI -->
+<div class="section fade">
+  <h2>I nostri pacchetti</h2>
+  <div class="prices">
+    <div class="price-box">
+      <h3>Base</h3>
+      <p>🎉 Sala + musica</p>
+      <p><b>€100</b></p>
+    </div>
+    <div class="price-box">
+      <h3>Standard</h3>
+      <p>🎉 Sala + animazione</p>
+      <p><b>€150</b></p>
+    </div>
+    <div class="price-box">
+      <h3>Premium</h3>
+      <p>🎉 Sala + mascotte</p>
+      <p><b>€200</b></p>
+    </div>
+  </div>
 </div>
 
 <!-- CONTATTI -->
-<div class="section">
+<div class="section fade">
   <h2>Contatti</h2>
   <p>📍 Via Cosenza 14, Taranto</p>
   <p>📞 375 5022384</p>
 </div>
+
+<!-- POPUP -->
+<div id="popup" onclick="closeImg()">
+  <img id="popup-img">
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/393755022384" class="whatsapp">💬</a>
+
+<!-- SCRIPT -->
+<script>
+function openImg(src){
+  document.getElementById('popup').style.display='flex';
+  document.getElementById('popup-img').src = src;
+}
+
+function closeImg(){
+  document.getElementById('popup').style.display='none';
+}
+
+const elements = document.querySelectorAll('.fade');
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const position = el.getBoundingClientRect().top;
+    const screen = window.innerHeight;
+    if(position < screen - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
